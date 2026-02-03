@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Weather App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🌍 Pro Weather</h1>
+    <div>
+      <button id="unitToggle">°F</button>
+      <button id="modeToggle">🌙</button>
+    </div>
+  </header>
+
+  <div class="search">
+    <input type="text" id="cityInput" placeholder="Search city...">
+    <button onclick="getWeather()">Search</button>
+    <button onclick="getLocation()">📍</button>
+  </div>
+
+  <div id="history" class="history"></div>
+
+  <div id="loading" class="loading">⏳ Fetching weather...</div>
+
+  <div class="weather-card" id="weatherCard">
+    <h2 id="cityName"></h2>
+    <p id="updateTime"></p>
+
+    <img id="icon" src="" alt="Weather Icon">
+    <h1 id="temp"></h1>
+    <p id="desc"></p>
+
+    <div class="details">
+      <div>💧 Humidity: <span id="humidity"></span>%</div>
+      <div>🌬️ Wind: <span id="wind"></span> km/h</div>
+      <div>🌡️ Feels: <span id="feels"></span>°</div>
+      <div>🌅 Sunrise: <span id="sunrise"></span></div>
+      <div>🌇 Sunset: <span id="sunset"></span></div>
+      <div>☀️ UV Index: <span id="uv"></span></div>
+      <div>🧭 AQI: <span id="aqi"></span></div>
+    </div>
+
+    <h3>5-Day Forecast</h3>
+    <div class="forecast" id="forecast"></div>
+
+    <h3>Hourly Forecast</h3>
+    <div class="hourly" id="hourly"></div>
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

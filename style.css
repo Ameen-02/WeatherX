@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #1e3c72, #2a5298);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.container {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  width: 95%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.search {
+  display: flex;
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.search button {
+  padding: 8px;
+  border: none;
+  background: #2a5298;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.weather-card {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.weather-card img {
+  width: 100px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.details div {
+  background: rgba(0,0,0,0.05);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.forecast, .hourly {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.forecast div, .hourly div {
+  background: rgba(0,0,0,0.05);
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 80px;
+}
+
+.history {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.history span {
+  background: #ddd;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.loading {
+  display: none;
+}
+
+/* Dark Mode */
+body.dark {
+  background: linear-gradient(to right, #000428, #004e92);
+}
+
+body.dark .container {
+  background: rgba(20, 20, 20, 0.9);
+  color: white;
+}
+
+body.dark .details div,
+body.dark .forecast div,
+body.dark .hourly div {
+  background: rgba(255,255,255,0.1);
+}
